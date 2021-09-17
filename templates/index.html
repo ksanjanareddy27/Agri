@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width , initial-scale=1.0" >
+  <meta name="description" content="Fertilizer Prediction">
+  <meta name="author" content="Mayank Singh">
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+  <script type="text/javascript" href="{{ url_for('static',filename='bootstrap.min.js') }}" rel="stylesheet" media="screen"> </script>
+  <script type="text/javascript" href="{{ url_for('static',filename='login2_js.js') }}" rel="stylesheet" media="screen"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+  <link href="{{ url_for('static',filename='styles/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+  <link href="{{ url_for('static',filename='styles/index_css.css') }}" rel="stylesheet" media="screen">
+
+</head>
+<body>
+
+<div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Precision Farming</a>
+    </div>
+     <ul class="nav navbar-nav">
+      <li id="nav1"><a href="/users/index"></a></li>
+    </ul>
+
+ </nav>
+ </div>
+<div id="map" style="width:100%;height:50px;margin-top:-40px"></div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnHwu2ZwEb9a-SRj07HK3rRBA_H3ZSgRI&callback=myMap"></script>
+<div class="wrapper container-fluid">
+  <div class="row well" style="min-height: 100px">
+    <div class="row"> 
+      <div class ="col-sm-12 col-centered" style="padding-bottom: 1em">                 
+        <center><div class="btn-group center">
+            </div> 
+        </center>
+      </div> 
+    </div>
+<form action="/users/analyse" method="POST"> 
+    <div class="row" style="padding-bottom: 0.5em , margin-left : -30px">
+      <div class = "col-md-2">
+        <div class="input-group">
+            <span class="input-group-addon">Nitrogen</i></span>
+            <input id="input_value3" type="text" class="form-control" name="Nitrogen" placeholder="Enter Nitrogen Value">
+            
+          </div>
+        </div>
+
+      <div class = "col-md-3">
+        <div class="input-group">
+            <span class="input-group-addon">Phosphorous</i></span>
+            <input id="input_value2" type="text" class="form-control" name="Phosphorous" placeholder="Enter Phosphorous Value">
+          </div>
+        </div>
+
+      <div class ="col-md-2">
+        <div class="input-group">
+            <span class="input-group-addon">Potassium</i></span>
+            <input id="input_value1" type="text" class="form-control" name="Potassium" placeholder="Enter Potassium Value">
+          </div>
+      </div>
+      
+      <div class = "col-md-3">
+        <div class="input-group">
+            <span class="input-group-addon">Nickel</i></span>
+            <input id="input_value6" type="text" class="form-control" name="Nickel" placeholder="Enter Nickel Value">
+          </div>
+        </div>
+      
+        <div class = "col-md-3">
+          <div class="input-group">
+              <span class="input-group-addon">Zinc</i></span>
+              <input id="input_value7" type="text" class="form-control" name="Zinc" placeholder="Enter Zinc Value">
+            </div>
+          </div>
+        
+          <div class = "col-md-3">
+            <div class="input-group">
+                <span class="input-group-addon">Sulphur</i></span>
+                <input id="input_value8" type="text" class="form-control" name="Sulphur" placeholder="Enter Sulphur Value">
+              </div>
+            </div>
+            <div class = "col-md-3">
+              <div class="input-group">
+                  <span class="input-group-addon">Magnesium</i></span>
+                  <input id="input_value9" type="text" class="form-control" name="Magnesium" placeholder="Enter Magnesium Value">
+                </div>
+              </div>
+        
+              <div class = "col-md-3">
+                <div class="input-group">
+                    <span class="input-group-addon">Boron</i></span>
+                    <input id="input_value10" type="text" class="form-control" name="Boron" placeholder="Enter Boron Value">
+                  </div>
+                </div>
+                <div class = "col-md-3">
+                  <div class="input-group">
+                      <span class="input-group-addon">Chlorine</i></span>
+                      <input id="input_value11" type="text" class="form-control" name="Chlorine" placeholder="Enter Chlorine Value">
+                    </div>
+                  </div>
+                  <div class = "col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">Manganese</i></span>
+                        <input id="input_value12" type="text" class="form-control" name="Manganese" placeholder="Enter Manganese Value">
+                      </div>
+                    </div>
+                    <div class = "col-md-3">
+                      <div class="input-group">
+                          <span class="input-group-addon">Molybdenum</i></span>
+                          <input id="input_value13" type="text" class="form-control" name="Molybdenum" placeholder="Enter Molybdenum Value">
+                        </div>
+                      </div>
+                      <div class = "col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-addon">Calcium</i></span>
+                            <input id="input_value14" type="text" class="form-control" name="Calcium" placeholder="Enter Calcium Value">
+                          </div>
+                        </div>
+                        <div class = "col-md-3">
+                          <div class="input-group">
+                              <span class="input-group-addon">Copper</i></span>
+                              <input id="input_value15" type="text" class="form-control" name="Copper" placeholder="Enter Copper Value">
+                            </div>
+                          </div>
+                          <div class = "col-md-3">
+                            <div class="input-group">
+                                <span class="input-group-addon">Iron</i></span>
+                                <input id="input_value16" type="text" class="form-control" name="Iron" placeholder="Enter Iron Value">
+                              </div>
+                            </div>
+
+        <div class = "col-md-2">
+        <div class="input-group">
+            <span class="input-group-addon">pH</i></span>
+            <input id="input_value4" type="text" class="form-control" name="pH" placeholder="Enter pH Value">
+          </div>
+        </div>
+        <div class = "col-md-3">
+        <div class="input-group">
+            <span class="input-group-addon">Temperature</i></span>
+            <input id="input_value5" type="text" class="form-control" name="Temperature" placeholder="Enter Temperature Value">
+          </div>
+        </div>
+       
+    </div>
+  </div>   
+</div>
+
+<div class="wrapper container-fluid" style="margin-bottom : 10px">
+  <div class="row">
+    <div class="col-md-12 text-right">
+       <button type="submit" href="/users/analyse" class="btn btn-primary nav_btn" ><i class="fa fa-play icn" aria-hidden="true"></i>Analyse</button>
+   </form>
+    
+    </div>
+  </div>
+</div>
+             
+	
+ 
+
+<td>
+            <img id="imgMap" alt="" style="display: none" />
+</td>
+
+      
+</body>
+</html>
+
